@@ -1,13 +1,13 @@
 from FDDB import FDDB
 dd = FDDB()
-dd.runFDDB(pred='./FDDB-result/result.txt', result_path=None, index=-1)
+dd.runFDDB(pred='./result/FDDB_dets.txt', result_path='./result/', index=-1)
 
 from matplotlib import pyplot as plt
 import numpy as np
 
-path_ContROC = "./FDDB-result/ContROC.txt"
-path_DiscROC = "./FDDB-result/DiscROC.txt"
-path_imgSave = "./FDDB-result/result.png"
+path_ContROC = "./result/ContROC.txt"
+path_DiscROC = "./result/DiscROC.txt"
+path_imgSave = "./result/result.png"
 
 set_x_lim = 1000
 
@@ -37,7 +37,7 @@ plt.ylabel('True Positive Rate (FPR)')
 plt.plot(disc_x,disc_y,color = '#007777', linewidth = 3.0)
 
 # print data text
-plt.title('MTCNN-Tensorflow')
+plt.title('Pytorch RetinaFace mobile0.25')
 plt.text(disc_x[0] - disc_x[0] / 3,disc_y[0] + 0.03,'Discrete Score: %.3f' %(disc_y[0] * 100) + '%')
 
 # 
@@ -45,6 +45,6 @@ plt.grid()
 
 # save img
 # plt.figure(figsize=(10, 10))
-plt.savefig('./FDDB-result/result.png')
+plt.savefig(path_imgSave)
 plt.show()
 

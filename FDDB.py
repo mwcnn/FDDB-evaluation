@@ -4,21 +4,21 @@ import os
 class FDDB:
     def __init__(self, **kwargs):
         # 設定evaluate參數
-        # -a : ground truth的TXT檔
-        # -d : 你的演算法產生的答案TXT檔
-        # -f : 0 使用矩形，1 使用橢圓，2 使用點陣列
-        # -i : 放置照片的目錄 (originalPics)
-        # -l : 記錄所有圖片的TXT檔
-        # -r : 將要存放ROC輸出的目錄
-        # -z : 使用".jpg"
-        # -s : 搜尋需要輸出的圖片
+        # -a : ground truth的TXT檔: grount truth file.txt
+        # -d : 你的演算法產生的答案TXT檔: fddb result file.txt
+        # -f : 0 使用矩形，1 使用橢圓，2 使用點陣列: 0 Rectange, 1 Ellipse, 2 Array
+        # -i : 放置照片的目錄 (originalPics): FDDB images dir
+        # -l : 記錄所有圖片的TXT檔: FDDB image list filr.txt
+        # -r : 將要存放ROC輸出的目錄: ROC output dir
+        # -z : 使用".jpg": Use .jpg
+        # -s : 搜尋需要輸出的圖片: Search for image to be output
         self.fddb = 'FDDB.exe'
-        self.a = 'D:/dataset/face/FDDB/FDDB-folds/FDDB-fold-ellipseList-all.txt'
-        self.d = './FDDB-result/result.txt'
+        self.a = './val_gt.txt'
+        self.d = './result/FDDB_dets.txt'
         self.f = '0'
-        self.i = 'D:\\dataset\\face\\FDDB\\originalPics\\'
-        self.l = 'D:/dataset/face/FDDB/FDDB-folds/FDDB-fold-all.txt'
-        self.r = './FDDB-result/'
+        self.i = r'"D:/Kuliah/Tutor DeepLearning/Face Recognition (Pak Riza)/FDDB-evaluation/fddb_images/"'
+        self.l = './val.txt'
+        self.r = './result/'
         self.z = '.jpg'
 
     def runFDDB(self, pred=None, result_path=None, index=-1):
