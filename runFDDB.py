@@ -31,7 +31,7 @@ plt.ylim((-0.07,1))
 # plt.xlim((-2,set_x_lim))
 # print label
 plt.xlabel('False Positive (FP)')
-plt.ylabel('True Positive Rate (FPR)')
+plt.ylabel('True Positive Rate (TPR)')
 
 # plot data
 plt.plot(disc_x,disc_y,color = '#007777', linewidth = 3.0)
